@@ -17,5 +17,10 @@ pipeline {
                 sh "mvn package"
             }
         }
+        stage('Archaving') { 
+            steps {
+               archiveArtifacts "/var/lib/jenkins/workspace/jenkinss-maven/target/my-app-1.0-SNAPSHOT.jar"
+            }
+        }
     }
 }
